@@ -28,12 +28,13 @@ DictionaryToArray()
 sorting()
 {
 	len=${#arr[@]}
+	sign=$1	
 
 	for((i=0;i<len;i++))
 	do
-		for((j=i+1;j<=len;j++))
+		for((j=i+1;j<len;j++))
 		do
-			if [[ ${arr[i]%.*} -lt ${arr[j]%.*} ]]
+			if (( ${arr[i]%.*} $sign ${arr[j]%.*} ))
 			then
 				temp=${arr[j]}
 				arr[j]=${arr[i]}
@@ -48,8 +49,13 @@ DictionaryToArray
 echo before Sorting
 echo  ${arr[@]}
 
-sorting
+sorting '<'
 # printing array element after sorting
 echo After sorting in Descending order
+echo  ${arr[@]}
+
+sorting '>'
+# printing array element after sorting
+echo After sorting in Ascending order
 echo  ${arr[@]}
 
