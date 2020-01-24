@@ -26,7 +26,7 @@ DictionaryToArray()
 }
 
 DictionaryToArray
-# printing all operations in dictionary 
+# printing all operations in array 
 echo  ${arr[@]}
 
 
