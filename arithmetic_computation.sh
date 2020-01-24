@@ -43,9 +43,13 @@ sorting()
 	done
 }
 DictionaryToArray
-sorting
-# printing all operations in dictionary 
+
+# printing array element before sorting
+echo before Sorting
 echo  ${arr[@]}
 
-
+sorting
+# printing array element after sorting
+echo After sorting in Descending order
+echo  ${arr[@]}
 
