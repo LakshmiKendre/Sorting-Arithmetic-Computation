@@ -27,14 +27,13 @@ DictionaryToArray()
 
 sorting()
 {
-	len=${#arr[@]}
-	sign=$1	
+	len=${#arr[@]}	
 
 	for((i=0;i<len;i++))
 	do
 		for((j=i+1;j<len;j++))
 		do
-			if (( ${arr[i]%.*} $sign ${arr[j]%.*} ))
+			if (( ${arr[i]%.*} $1 ${arr[j]%.*} ))
 			then
 				temp=${arr[j]}
 				arr[j]=${arr[i]}
