@@ -25,7 +25,25 @@ DictionaryToArray()
 	done
 }
 
+sorting()
+{
+	len=${#arr[@]}
+
+	for((i=0;i<len;i++))
+	do
+		for((j=i+1;j<=len;j++))
+		do
+			if [[ ${arr[i]%.*} -lt ${arr[j]%.*} ]]
+			then
+				temp=${arr[j]}
+				arr[j]=${arr[i]}
+				arr[i]=$temp
+			fi
+		done
+	done
+}
 DictionaryToArray
+sorting
 # printing all operations in dictionary 
 echo  ${arr[@]}
 
